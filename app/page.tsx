@@ -1,10 +1,20 @@
+import { execSync } from "node:child_process";
 import Reveal from "./components/Reveal";
 import Terminal from "./components/Terminal";
 import EasterEggs from "./components/EasterEggs";
 
 // Same base path Next uses for assets, so static links resolve under /my-portfolio on Pages.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const commit = "078bc31"; // current build
+
+// Stamped at build time so the footer always shows the real deployed commit.
+// CI checkout keeps .git available; falls back to "dev" if git isn't reachable.
+const commit = (() => {
+  try {
+    return execSync("git rev-parse --short HEAD").toString().trim();
+  } catch {
+    return "dev";
+  }
+})();
 
 const skills = [
   { name: "c++", version: "^17.0", icon: "⚙️" },
