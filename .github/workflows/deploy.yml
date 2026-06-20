@@ -29,11 +29,9 @@ jobs:
 
       - run: npm ci
 
+      # Served from the root: https://rendercold007.github.io/ (no base path).
       - name: Build static export
         run: npm run build
-        env:
-          # Repo name -> served from https://<user>.github.io/my-portfolio/
-          NEXT_PUBLIC_BASE_PATH: /my-portfolio
 
       # Stops GitHub Pages from running Jekyll, which would drop the _next folder.
       - run: touch out/.nojekyll
