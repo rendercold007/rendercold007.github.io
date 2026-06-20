@@ -40,6 +40,14 @@ export default function Home() {
             <a href="#skills" className="hover:text-white transition-colors">Skills</a>
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </nav>
@@ -89,6 +97,14 @@ export default function Home() {
               className="border border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.06] text-gray-300 hover:text-white px-6 py-3 rounded-full font-medium transition hover:scale-105"
             >
               View GitHub
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.02] hover:bg-white/[0.06] text-gray-300 hover:text-white px-6 py-3 rounded-full font-medium transition hover:scale-105"
+            >
+              <span>↓</span> Resume
             </a>
           </div>
         </div>
